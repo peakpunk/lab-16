@@ -17,3 +17,23 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &a, int &b, int &c, int &d){
+	int num[4] = {a, b, c, d};
+	int i = 0;
+    int z[4];
+    while(i <= 3){
+        z[i] = rand()%4;
+        for(int k = 0; k < i;k++){
+            if(z[i] == z[k]){
+                i--;
+                break;
+            } 
+        }
+        i++;
+    }
+	a = num[z[0]];
+	b = num[z[1]];
+	c = num[z[2]];
+	d = num[z[3]];
+}
